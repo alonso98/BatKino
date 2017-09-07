@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/main.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="nav">
+        <div class="emblema">
+            <img src="~/Content/logo.png" class="logo">
+            <p class="name">BatKino</p>
+        </div>
+        <div class="nav-menu-storage">
+            <div class="nav-menu">
+                <a class="nav-menu-a" href="#">Сейчас</a>
+            </div>
+            <div class="nav-menu">
+                <a class="nav-menu-a" href="#">Скоро</a>
+            </div>
+            <div class="nav-menu">
+                <a class="nav-menu-a" href="#">Актёры</a>
+            </div>
+            <div class="nav-menu">
+                <a class="nav-menu-a" href="#">О нас</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        @RenderBody()
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

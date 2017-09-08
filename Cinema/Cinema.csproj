@@ -153,24 +153,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Film.cs">
-      <DependentUpon>FilmsContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\FilmsContext.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FilmsContext.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\FilmsContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FilmsContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\FilmsContext.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FilmsContext.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Models\CinemaContext.cs" />
+    <Compile Include="Models\Film.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -186,27 +170,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\FilmsContext.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FilmsContext.edmx</DependentUpon>
-      <LastGenOutput>FilmsContext.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\FilmsContext.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FilmsContext.edmx</DependentUpon>
-      <LastGenOutput>FilmsContext.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <EntityDeploy Include="Models\FilmsContext.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FilmsContext.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\FilmsContext.edmx.diagram">
-      <DependentUpon>FilmsContext.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -231,6 +198,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

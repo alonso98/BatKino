@@ -21,10 +21,26 @@ namespace Cinema.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(Film film, HttpPostedFileBase imgFront, HttpPostedFileBase imgBack)
+        public ActionResult Create(Film film, HttpPostedFileBase imgFront)
         {
-
-            return RedirectToAction("Index");
+            if (ModelState.IsValid && imgFront != null/* && imgBack != null*/)
+            {
+                byte[] FrontImage = null, BackImage = null;
+                using (var reader = new BinaryReader(imgFront.InputStream))
+                {
+                    FrontImage = reader.ReadBytes(imgFront.ContentLength);
+                }
+                /*using (var reader = new BinaryReader(imgBack.InputStream))
+                {
+                    BackImage = reader.ReadBytes(imgBack.ContentLength);
+                }*/
+                film.ImgFront = FrontImage;
+                //film.ImgBack = BackImage;
+                db.Films.Add(film);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return HttpNotFound();
         }
     }
 }
